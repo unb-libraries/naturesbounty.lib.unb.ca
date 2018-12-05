@@ -1,0 +1,20 @@
+uuid: da1a4dc1-6aa9-408d-835b-3c595dffed98
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - naturesbounty_lib_unb_ca
+id: mainpagecontent
+theme: naturesbounty_lib_unb_ca
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: visible
+visibility: {  }

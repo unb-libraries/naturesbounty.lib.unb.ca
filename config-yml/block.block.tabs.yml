@@ -1,0 +1,20 @@
+uuid: c5346c69-1bfb-471f-befe-745de1ecbd99
+langcode: en
+status: true
+dependencies:
+  theme:
+    - naturesbounty_lib_unb_ca
+id: tabs
+theme: naturesbounty_lib_unb_ca
+region: content
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

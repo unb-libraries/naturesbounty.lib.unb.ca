@@ -1,0 +1,18 @@
+uuid: 1cd57ab9-a4f4-45dc-ba10-6a867eff2a27
+langcode: en
+status: true
+dependencies:
+  theme:
+    - naturesbounty_lib_unb_ca
+id: primaryadminactions
+theme: naturesbounty_lib_unb_ca
+region: content
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }
