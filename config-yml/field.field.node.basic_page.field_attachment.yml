@@ -18,7 +18,7 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: files
+  file_directory: ''
   file_extensions: 'pdf epub mobi'
   max_filesize: ''
   description_field: false
