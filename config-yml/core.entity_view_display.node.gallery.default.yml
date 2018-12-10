@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.gallery.field_image
+    - image.style.medium
     - node.type.gallery
   module:
     - colorbox
@@ -17,7 +18,7 @@ content:
     weight: 102
     label: above
     settings:
-      colorbox_node_style: ''
+      colorbox_node_style: medium
       colorbox_node_style_first: ''
       colorbox_image_style: ''
       colorbox_gallery: post
