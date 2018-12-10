@@ -1,0 +1,17 @@
+uuid: 38ebeaaf-4fee-4729-b62e-4d65a3a49c82
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Basic Page'
+type: basic_page
+description: 'Basic page with title and body.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false
