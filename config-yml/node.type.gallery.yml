@@ -1,0 +1,17 @@
+uuid: 915832a3-0a3a-4973-9b92-cf9ee96951d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Gallery
+type: gallery
+description: 'Content type to store image gallery.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false
