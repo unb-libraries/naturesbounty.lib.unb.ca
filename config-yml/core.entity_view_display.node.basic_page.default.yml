@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.basic_page.body
+    - field.field.node.basic_page.field_attachment
     - node.type.basic_page
   module:
+    - file
     - text
     - user
 id: node.basic_page.default
@@ -20,9 +22,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_attachment:
+    weight: 102
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

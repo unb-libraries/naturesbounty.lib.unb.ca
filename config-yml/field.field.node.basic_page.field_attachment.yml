@@ -1,0 +1,27 @@
+uuid: 4980647e-9f94-4924-a7e2-13a84c979043
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachment
+    - node.type.basic_page
+  module:
+    - file
+id: node.basic_page.field_attachment
+field_name: field_attachment
+entity_type: node
+bundle: basic_page
+label: Attachment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: files
+  file_extensions: 'pdf epub mobi'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file
