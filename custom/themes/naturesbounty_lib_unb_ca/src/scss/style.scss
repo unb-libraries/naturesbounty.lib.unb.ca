@@ -1,8 +1,25 @@
 // If you wish to compile/extend Bootstrap then uncomment line below and disable subtheme CDN
 // @import '../../../../../vendor/unb-libraries/unb_lib_theme/assets/stylesheets/unblib';
 
+// colors
+$sand: #caca9e;
+
 // global
+body {
+  background-color: $sand;
+}
+
+header.navbar.navbar-default.container {
+  max-width: 1170px;
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
 div[role="main"] {
+  padding: 2em;
+  background: white;
   text-align: justify;
   line-height: 1.75;
   font-family: 'Merriweather', serif;
