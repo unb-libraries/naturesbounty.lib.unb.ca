@@ -15,6 +15,7 @@ header.navbar.navbar-default.container {
   padding: 0;
   border: none;
   border-radius: 0;
+  font-family: 'Merriweather', serif;
 }
 
 div[role="main"] {
@@ -44,4 +45,9 @@ div[role="main"] {
 .field--name-field-image .field--item {
   display: inline-block;
   padding: 5px;
+}
+
+// footer
+footer.footer.container {
+  margin-top: 1em;
 }
