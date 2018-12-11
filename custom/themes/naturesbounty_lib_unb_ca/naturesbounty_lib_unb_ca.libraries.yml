@@ -2,3 +2,4 @@ global-styling:
   css:
     theme:
       dist/css/style.css: {}
+      '//fonts.googleapis.com/css?family=Merriweather:400-700': { type: external, minified: true }
