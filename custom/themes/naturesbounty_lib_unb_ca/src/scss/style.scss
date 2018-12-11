@@ -1,6 +1,16 @@
 // If you wish to compile/extend Bootstrap then uncomment line below and disable subtheme CDN
 // @import '../../../../../vendor/unb-libraries/unb_lib_theme/assets/stylesheets/unblib';
 
+// main
+#book-title {
+  margin-bottom: 1em;
+  line-height: 40px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
 // gallery images
 .field--name-field-image .field--item {
   display: inline-block;

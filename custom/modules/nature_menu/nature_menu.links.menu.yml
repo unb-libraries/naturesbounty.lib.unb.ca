@@ -1,0 +1,35 @@
+nature_menu.home:
+  title: 'Home'
+  description: 'Home'
+  parent: main
+  menu_name: main
+  url: internal:/
+  weight: 10
+nature_menu.foreword:
+  title: 'Foreword'
+  description: 'Foreword'
+  parent: main
+  menu_name: main
+  url: internal:/foreword
+  weight: 20
+nature_menu.gallery:
+  title: 'Gallery'
+  description: 'Gallery'
+  parent: main
+  menu_name: main
+  url: internal:/gallery
+  weight: 30
+nature_menu.biography:
+  title: 'Biography'
+  description: 'Biography'
+  parent: main
+  menu_name: main
+  url: internal:/biography
+  weight: 40
+nature_menu.credits:
+  title: 'Credits'
+  description: 'Credits'
+  parent: main
+  menu_name: main
+  url: internal:/credits
+  weight: 50

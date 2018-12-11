@@ -1,0 +1,5 @@
+name: NATURE Main Menu
+type: module
+description: Menu for naturesbounty.lib.unb.ca
+core: 8.x
+package: NATURE Custom
