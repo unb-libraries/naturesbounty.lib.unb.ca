@@ -1,11 +1,11 @@
 uuid: 'NULL'
-name: 'Drush Site-Install'
-mail: admin@example.com
+name: 'Nature''s Bounty'
+mail: libsystems@unb.ca
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /node/2
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
