@@ -29,6 +29,12 @@ div[role="main"] {
   }
 }
 
+// nav
+a.is-active {
+  color: black !important;
+  border-bottom: 1px solid black;
+}
+
 // main
 #book-title {
   margin-bottom: 1em;
