@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.basic_page.field_attachment
     - node.type.basic_page
   module:
-    - file
     - text
     - user
 id: node.basic_page.default
@@ -18,21 +17,14 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_attachment:
-    weight: 102
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_attachment: true
