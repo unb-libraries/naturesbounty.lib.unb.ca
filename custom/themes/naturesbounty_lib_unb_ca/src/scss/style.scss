@@ -21,9 +21,12 @@ header.navbar.navbar-default.container {
 div[role="main"] {
   padding: 2em;
   background: white;
-  text-align: justify;
   line-height: 1.75;
   font-family: 'Merriweather', serif;
+
+  p {
+    text-align: justify;
+  }
 }
 
 // main
