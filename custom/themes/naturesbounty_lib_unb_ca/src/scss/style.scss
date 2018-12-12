@@ -37,7 +37,7 @@ a.is-active {
 
 // main
 #book-title {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   line-height: 40px;
   font-size: 20px;
   font-style: italic;
@@ -54,6 +54,13 @@ a.is-active {
 .field--name-field-image .field--item {
   display: inline-block;
   padding: 5px;
+}
+
+// biography
+#bio-pic {
+  margin: 0em 1.5em;
+  float: right;
+  width: 512px;
 }
 
 // footer
