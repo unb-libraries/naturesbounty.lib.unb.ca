@@ -1,0 +1,20 @@
+uuid: d439ebcc-1950-44a7-a4ae-e464caf7423a
+langcode: en
+status: true
+dependencies:
+  module:
+    - nature_menu
+  theme:
+    - naturesbounty_lib_unb_ca
+id: natureheader
+theme: naturesbounty_lib_unb_ca
+region: branding
+weight: 0
+provider: null
+plugin: nature_header
+settings:
+  id: nature_header
+  label: 'Nature Header'
+  provider: nature_menu
+  label_display: '0'
+visibility: {  }
