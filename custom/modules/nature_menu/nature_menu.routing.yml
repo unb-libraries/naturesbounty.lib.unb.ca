@@ -1,6 +1,0 @@
-nature_menu.home:
-  path: '/home'
-  defaults:
-    _controller: '\Drupal\nature_menu\Controller\NatureMenuController::home'
-  requirements:
-    _permission: 'access content'
