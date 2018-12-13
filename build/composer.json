@@ -76,7 +76,7 @@
         "drupal/core": "8.6.3",
         "drupal/externalauth": "1.0",
         "drupal/features": "3.7",
-        "drupal/google_analytics": "2.2",
+        "drupal/google_analytics": "2.3",
         "drupal/ldap": "3.0-beta3",
         "drupal/libraries": "3.x.dev",
         "drupal/pathauto": "1.1",
