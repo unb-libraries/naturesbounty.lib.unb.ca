@@ -92,9 +92,11 @@ ul.tabs--primary.nav.nav-tabs {
   margin-bottom: 1em;
 }
 
-@media (min-width: 1200px)
-.container {
-    width: 1175px;
+@media (min-width: 1200px) {
+
+  div[role="main"] {
+      width: 1175px;
+  }
 }
 
 // gallery images
