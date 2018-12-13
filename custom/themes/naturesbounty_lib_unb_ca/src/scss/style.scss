@@ -9,10 +9,10 @@ body {
   background-color: $sand;
 }
 
-header.navbar.navbar-default.container {
+#navbar {
   max-width: 1170px;
   margin-bottom: 0;
-  padding: 0;
+  padding: 0 1em;
   border: none;
   border-radius: 0;
   font-family: 'Merriweather', serif;
@@ -42,9 +42,12 @@ div[role="main"] {
 }
 
 // nav
-a.is-active {
-  color: black !important;
-  border-bottom: 1px solid black;
+@media (min-width: 768px) {
+
+  a.is-active {
+    color: black !important;
+    border-bottom: 1px solid black;
+  }
 }
 
 // main
@@ -77,6 +80,22 @@ ul.tabs--primary.nav.nav-tabs {
   margin: 0em 1.5em;
   float: right;
   max-width: 512px;
+}
+
+@media (max-width: 680px) {
+
+  #bio-pic {
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 620px) {
+  #bio-pic {
+    margin-bottom: 1em;
+    margin-left: 0;
+    max-width: 320px;
+    float: left;
+  }
 }
 
 // footer
