@@ -1,0 +1,20 @@
+uuid: 0b00af2d-3d14-4172-9dbc-2ad4e4f19b5f
+langcode: en
+status: true
+dependencies:
+  module:
+    - nature_menu
+  theme:
+    - naturesbounty_lib_unb_ca
+id: naturefooter
+theme: naturesbounty_lib_unb_ca
+region: footer
+weight: 0
+provider: null
+plugin: nature_footer
+settings:
+  id: nature_footer
+  label: 'Nature Footer'
+  provider: nature_menu
+  label_display: '0'
+visibility: {  }

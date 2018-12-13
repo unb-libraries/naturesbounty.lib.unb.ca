@@ -1,18 +1,31 @@
 favicon:
   mimetype: image/vnd.microsoft.icon
-  path: ''
+  path: themes/custom/naturesbounty_lib_unb_ca/images/favicon.ico
   url: 'http://localhost:3098/themes/contrib/unb_lib_theme/favicon.ico'
-  use_default: true
-features:
-  comment_user_picture: true
-  comment_user_verification: true
-  favicon: true
-  node_user_picture: false
-logo:
-  path: ''
-  url: ''
-  use_default: true
+  use_default: 0
 schemas:
   bootstrap: 8000
   unb_lib_theme: 8000
   naturesbounty_lib_unb_ca: 8000
+features:
+  comment_user_picture: true
+  comment_user_verification: 0
+  favicon: 1
+  node_user_picture: false
+logo:
+  path: ''
+  url: ''
+  use_default: 0
+region_wells:
+  branding: ''
+  header: ''
+  navigation: ''
+  navigation_collapsible: ''
+  highlighted: ''
+  help: ''
+  content: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  footer: ''
+table_responsive: '-1'
+table: ''
