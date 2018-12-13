@@ -29,6 +29,11 @@ div[role="main"] {
   }
 }
 
+h1.page-header {
+  border: none;
+  font-size: 20px;
+}
+
 // banner
 #banner {
   background:
@@ -39,6 +44,15 @@ div[role="main"] {
 
 .dialog-off-canvas-main-canvas .container:first-of-type .row .col-sm-12 {
   padding: 0;
+}
+
+@media (max-width: 530px) {
+
+  #banner {
+    background:
+      #E5E5CA url(/themes/custom/naturesbounty_lib_unb_ca/images/logo-small.png)
+      no-repeat center center;
+    }
 }
 
 // nav
@@ -53,6 +67,7 @@ div[role="main"] {
 // main
 #book-title {
   margin-bottom: 1.5em;
+  margin-top: 0;
   line-height: 40px;
   font-size: 20px;
   font-style: italic;
@@ -101,4 +116,32 @@ ul.tabs--primary.nav.nav-tabs {
 // footer
 footer.footer.container {
   margin-top: 1em;
+  padding-top: 1em;
+
+  div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+#footer {
+  width: 100%;
+}
+
+#liblogo img {
+  max-width: 256px;
+}
+
+@media (min-width: 768px) {
+
+  #liblogo img {
+    float: right;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #footer .row {
+    padding-left: 1em;
+  }
 }

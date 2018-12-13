@@ -20,8 +20,7 @@ class NatureHeader extends BlockBase {
    */
   public function build() {
     $text = '
-      <div id="banner">
-      </div>
+      <a href="/"><div id="banner"></div></a>
     ';
     return [
       '#markup' => $this->t($text),
