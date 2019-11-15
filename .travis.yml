@@ -6,40 +6,22 @@ services:
 php:
   - '7.2'
 
-cache:
-  directories:
-    - $HOME/.composer/cache
-
 git:
   depth: 1
 
-env:
-  global:
-    - SERVICE_NAME=naturesbounty.lib.unb.ca
-    - AMAZON_ECR_REGION=us-east-1
-    - DEPLOY_BRANCHES=dev,prod
-    - DEPLOYMENT_FINISHED_MARKER=99_report_as_complete
-    - DOCKER_UPSTREAM_IMAGE=unblibraries/drupal:8.x-1.x
-    - OLD_IMAGES_TO_KEEP=2
-    - SERVICE_DEPLOY_PORT=80
-    - SERVICE_TEST_UP_PATH=/user
-
 before_install:
-  - curl -sSL https://raw.githubusercontent.com/unb-libraries/CargoDock/drupal-8.x-1.x/travis/deploy.sh | sh
-  - CargoDock/travis/beforeInstall.sh
-
-before_script:
-  - CargoDock/travis/beforeScript.sh
+  - composer install
+  - vendor/unb-libraries/dockworker/scripts/travis/init.sh
 
 script:
-  - CargoDock/travis/testInstance.sh
-
-after_success:
-  - CargoDock/travis/afterSuccess.sh
+  - set -e
+  - vendor/bin/dockworker local:build-test
+  - vendor/unb-libraries/dockworker/scripts/kubectl/init.sh
+  - vendor/bin/dockworker image:deploy $TRAVIS_BRANCH
 
 notifications:
   slack:
     rooms:
-      secure: q1sxQBmlmhNHjvA7Y98bDYdUOjxbqnniZEJLVDp9U7DfpoRFdHV+M8bLFoupnGcoicS3p8NsC2UsZzJb8o/Nsr3XMwBnZw1jILZGXXDjE5X1/07ztt4luEfQStr4R2iEdqR2/lb7+4OSrxRxS3WHhC+MX+swYqzvC+G5+lDH4rquHZ7k4oNJKiTqNyDOHwCYRSIM+kBfRF2FPS+ulUz6QfpGVvfu2zCTCDiyJ64QrFOLxE7xthRBT4mZGtwqDilEQz7Cg0VPsoBoXLWod8rdBBQc9mfeUW0/gxBmyNQenO02SVYxox16FyQxYt5WlGVG5Nmb3+JdVkGSTNtEstIRqRePucm5f9x//Hh39+/Z1qMsmoU9odCO1iVnKPUeHS4L8Etzk0vPjbG/M2bFv8mTfhYC1wAndad7OFwuzTtRH4HPXaiW9hxgYDfOqY4wlpFuMwdiCq0OT49kpmZpzNPQD+pphD6anep208OZZaTslEGqHuEhofqQ0PXBuF8TTjyAuuMNPtlj9MQqrX9ZO1eHmEnvGyLT+fiQ4lkWitWfpRO+BJanTt4EZMhlLdm0kTgZSpHwl0uWxfDqPztP+nCEARVUxwkkTOzgl0S35HauovVSJUmhViy8xvdxtQINJAANQjEPzfY0fCxCO6L/lAkqNs8/iGmP9ob1kEQEDH9S8nw=
+      secure: C0AL3O3JEwOtnO/TFBzOie7zhujfk27CjceUDYjbbo8RoO33qC/kGKdHjzlDkFKfmjUi7vEErU7/X3Btp16z2m6Tc+IOrU8WKqgr3cP+yMUqf/qqskMpw3G5H5rXG+dRt2rgQMhelvGpDHJeyLr2ajiwhwO9XRapfEj/KfRiZHhq1No3kTSAeSEG0gim0LzDsCxgV/LDtRoUfLgVQAe6Y2RJMDd9/EPd5o0FsG96hqlMZKJ2R2NO0gXTzGD6yOfU9571dEd5L8/KYToyeyglz3WK3JWPBPDIZSJh0StuC9lHnGP76v0s1sueVRWu2/jeYAxmoIay+VmwwHbXFQyEdxhKfEf0XvE6Z0sMDTnlJJeV//2sluZhvr1zib/AFequiklOQsNTkTsYjTRBuvlSmIN5dcgvY7Gb10EHe3nPUGgFUBUyQ0XnTu+92jA5DMqfD4tuaYb1ItCOb05GXyfF1YBDLN737DFXjqtzXT/Yx1VrUDFqp+0ljKla8vPcrgd4JY/7DKHk7hKQjDdStqTqXl1WTVxMK5d7lxdupY4GE4QpyuH3TAt40fUjaOE4qpwvqropkTRvTFpEg6eXLgPOB/qkDrqCMa5i2DOKli0aEMlZOd2CBXWEONvsrT73V5K62XgIcG1fVdcbA5EZ3v+PMJ+rHS7a2/JL0rSDaxsSqLU=
     on_start: always
     on_success: always
