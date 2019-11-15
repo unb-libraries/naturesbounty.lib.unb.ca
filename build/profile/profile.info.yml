@@ -1,6 +1,6 @@
-name: naturesbounty.lib.unb.ca Docker Profile
+name: PROFILE_SLUG Profile
 type: profile
-description: 'Install naturesbounty.lib.unb.ca docker profile.'
+description: 'Install PROFILE_SLUG.'
 version: 8.x-1.0
 core: 8.x
 
@@ -40,6 +40,8 @@ dependencies:
   - rdf
   - views
   - views_ui
+
+  # This instance
 
 themes:
   - seven
