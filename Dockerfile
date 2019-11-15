@@ -7,7 +7,7 @@ LABEL vcs-url="https://github.com/unb-libraries/naturesbounty.lib.unb.ca"
 
 ENV DRUPAL_SITE_ID nbounty
 ENV DRUPAL_SITE_URI naturesbounty.lib.unb.ca
-ENV DRUPAL_SITE_UUID NULL
+ENV DRUPAL_SITE_UUID 5386f767-6440-4d7e-8eb2-5578c3ae27c0
 
 # Deploy upstream scripts, and then override with any local.
 RUN curl -sSL https://raw.githubusercontent.com/unb-libraries/CargoDock/drupal-8.x-1.x/container/deploy.sh | sh
