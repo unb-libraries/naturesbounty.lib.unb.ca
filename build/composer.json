@@ -81,7 +81,7 @@
         "drupal/ldap": "3.0-beta3",
         "drupal/libraries": "3.x.dev",
         "drupal/pathauto": "1.1",
-        "drupal/redis": "1.1",
+        "drupal/redis": "1.2",
         "drupal/search_api": "1.14",
         "drupal/search_api_autocomplete": "1.2",
         "drupal/search_api_solr": "3.4",
