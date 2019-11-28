@@ -69,7 +69,7 @@
         }
     ],
     "require": {
-        "drupal/bootstrap": "3.20",
+        "drupal/bootstrap": "3.21",
         "drupal/config_update": "1.5",
         "drupal/colorbox": "1.4",
         "drupal/colorbox_inline": "1.1",
