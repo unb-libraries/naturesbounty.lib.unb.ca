@@ -1,7 +1,6 @@
-FROM unblibraries/drupal:dockworker-2.x
+FROM unblibraries/drupal:8.x-3.x-unblib
 MAINTAINER UNB Libraries <libsupport@unb.ca>
 
-ARG COMPOSER_DEPLOY_DEV=no-dev
 ENV DRUPAL_SITE_ID nbounty
 ENV DRUPAL_SITE_URI naturesbounty.lib.unb.ca
 ENV DRUPAL_SITE_UUID 5386f767-6440-4d7e-8eb2-5578c3ae27c0
