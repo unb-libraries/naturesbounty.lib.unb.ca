@@ -6,6 +6,7 @@ dockworker:
     project_prefix: NATURE
     upstream_images:
       - ghcr.io/unb-libraries/drupal:8.x-3.x-unblib
+    uuid: 3098
   deployment:
     environments:
       - dev
