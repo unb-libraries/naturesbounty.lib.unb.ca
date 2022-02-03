@@ -70,7 +70,7 @@
     ],
     "require": {
         "drupal/bootstrap": "3.23",
-        "drupal/colorbox": "1.7",
+        "drupal/colorbox": "1.8",
         "drupal/colorbox_inline": "1.2",
         "drupal/core": "9.3.4",
         "drupal/google_analytics": "2.5",
