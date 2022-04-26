@@ -77,7 +77,7 @@
   ],
   "require": {
     "drupal/bootstrap": "3.24",
-    "drupal/colorbox": "1.9",
+    "drupal/colorbox": "1.10",
     "drupal/colorbox_inline": "1.2",
     "drupal/core": "9.3.12",
     "drupal/google_analytics": "2.5",
