@@ -14,4 +14,3 @@ logo:
   use_default: true
 schemas:
   bootstrap: 8000
-  unb_lib_theme: 8000
