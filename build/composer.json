@@ -85,8 +85,7 @@
     "drupal/libraries": "3.x.dev",
     "drupal/redis": "1.5",
     "jackmoore/colorbox": "1.6.4",
-    "unb-libraries/drupal-builder": "^9",
-    "unb-libraries/unb_lib_theme": "dev-9.x-bootstrap-3.x"
+    "unb-libraries/drupal-builder": "^9"
   },
   "require-dev": {
     "unb-libraries/drupal-development-libraries": "^9"
