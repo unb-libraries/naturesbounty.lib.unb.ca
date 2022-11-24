@@ -5,6 +5,7 @@ favicon:
   use_default: 0
 schemas:
   bootstrap: 8000
+  unb_lib_theme: 8000
   naturesbounty_lib_unb_ca: 8000
 features:
   comment_user_picture: true

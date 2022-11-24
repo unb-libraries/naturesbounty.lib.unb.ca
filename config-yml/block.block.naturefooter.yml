@@ -15,6 +15,6 @@ plugin: nature_footer
 settings:
   id: nature_footer
   label: 'Nature Footer'
-  provider: nature_menu
   label_display: '0'
+  provider: nature_menu
 visibility: {  }

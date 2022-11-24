@@ -15,6 +15,6 @@ plugin: nature_header
 settings:
   id: nature_header
   label: 'Nature Header'
-  provider: nature_menu
   label_display: '0'
+  provider: nature_menu
 visibility: {  }
