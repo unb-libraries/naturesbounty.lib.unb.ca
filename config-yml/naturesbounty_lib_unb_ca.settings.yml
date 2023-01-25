@@ -1,11 +1,9 @@
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: themes/custom/naturesbounty_lib_unb_ca/images/favicon.ico
-  url: 'http://localhost:3098/themes/contrib/unb_lib_theme/favicon.ico'
   use_default: 0
 schemas:
   bootstrap: 8000
-  unb_lib_theme: 8000
   naturesbounty_lib_unb_ca: 8000
 features:
   comment_user_picture: true
