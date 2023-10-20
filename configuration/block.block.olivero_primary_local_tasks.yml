@@ -1,13 +1,15 @@
-uuid: f2c753bb-31b1-4c95-8d8e-a7991fef4481
+uuid: 92a3a1c4-0bbc-41db-9f63-1178ab57200b
 langcode: en
 status: true
 dependencies:
   theme:
-    - seven
-id: seven_primary_local_tasks
-theme: seven
-region: header
-weight: 0
+    - olivero
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: olivero_primary_local_tasks
+theme: olivero
+region: highlighted
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:

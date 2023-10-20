@@ -1,28 +1,80 @@
 dockworker:
-  version: '5'
+  version: '6'
   application:
-    name: naturesbounty.lib.unb.ca
-    finish_marker: '99_zz_notify_user_URI'
-    project_prefix: NATURE
-    upstream_images:
-      - ghcr.io/unb-libraries/drupal:9.x-2.x-unblib
-    uuid: 3098
-  deployment:
-    environments:
+    name: Nature's Bounty - Four Centuries of Plant Exploration in New Brunswick
+    uri: https://naturesbounty.lib.unb.ca
+    description: >
+      This study of plant exploration in New Brunswick from 1604 to 2000 is placed 
+      firmly within a regional framework. It encompasses short biographical sketches 
+      and tells the stories of naturalists and botanists in the light of the times 
+      in which they lived. The account illustrates the development of the science of 
+      botany and shows how, as museums and learning centres were established in the 
+      new land, North Americans became masters in their own house, taking over the 
+      botanical enquiry that had previously been the prerogative of Europeans. It 
+      examines early ecological studies and curious anomalies of plant distribution, 
+      as well as the modern-day emphasis on plant diversity and the need for 
+      conservation. It embodies implicit lessons that speak to our present-day 
+      concerns with climate change and the environment. Finally, it claims a place 
+      for early UNB botanists and for New Brunswick in botanical and environmental historiography.
+    topics:
+      - botany
+      - history
+      - research
+    identifiers:
+      id: naturesbounty.lib.unb.ca
+      slug: naturesbounty-lib-unb-ca
+      short_slug: nature
+      uuid: 3098
+    framework:
+      name: Drupal
+      version: 10
+      startup_finished_marker: '99_startup_sequence_complete'
+      endpoint:
+        name: http
+        port: 80
+        readiness_timeout: 15
+    license:
+      license: MIT
+      holder: University of New Brunswick Libraries
+    shell:
+      path: /bin/sh
+  endpoints:
+    env:
       - dev
       - prod
-    workflow:
-      source: dockworker-drupal
-      type: deployment-workflow
-  drupal:
-    major: 9
-  github:
-    repo: naturesbounty.lib.unb.ca
-    owner: unb-libraries
-  image:
-    push_branches:
-      - dev
-      - prod
-    name: ghcr.io/unb-libraries/naturesbounty.lib.unb.ca
-    date_tag_image: true
-    repository: ghcr
+    deployments:
+      naturesbounty-lib-unb-ca:
+        default: true
+        managed: true
+        name: naturesbounty-lib-unb-ca
+      drupal-mysql-lib-unb-ca:
+        managed: false
+        name: mysql
+      drupal-redis-lib-unb-ca:
+        managed: false
+        name: redis
+      drupal-solr-lib-unb-ca:
+        managed: false
+        name: solr
+  workflows:
+    vcs:
+      type: github
+      owner: unb-libraries
+      name: naturesbounty.lib.unb.ca
+    jira:
+      project_keys:
+        - NATURE
+    image:
+      name: ghcr.io/unb-libraries/naturesbounty.lib.unb.ca
+      parent: ghcr.io/unb-libraries/drupal:10.x-1.x-unblib
+      repository: GitHub
+      push-branches:
+        - dev
+        - prod
+    e2e_tests:
+        - id: core
+          frequency: '*/5 * * * *'
+          source_files:
+            - .dockworker/tests/e2e/naturesbounty.lib.unb.ca.yml
+          namespaces:
+            - prod
