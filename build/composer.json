@@ -103,6 +103,7 @@
     "drupal/health_check": "^1",
     "drupal/quickedit": "^1", 
     "drupal/redis": "^1",
+    "drupal/simple_sitemap": "^4",
     "drupal/rdf": "^2", 
     "jackmoore/colorbox": "^1",
     "unb-libraries/composer-drupal-scaffold": "^10"
