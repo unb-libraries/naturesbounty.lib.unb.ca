@@ -1,0 +1,5 @@
+services:
+  nature_menu.nature_route_subscriber:
+    class: Drupal\nature_menu\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
