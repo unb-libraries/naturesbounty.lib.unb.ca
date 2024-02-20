@@ -19,6 +19,7 @@ class RouteSubscriber extends RouteSubscriberBase {
       'user.pass',
       'user.register',
       'user.reset',
+      'user.login',
       'entity.user.edit_form',
     ];
 
