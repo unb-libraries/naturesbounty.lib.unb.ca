@@ -68,6 +68,8 @@ services:
       - "4098:8025"
     networks:
       - naturesbounty.lib.unb.ca
+    profiles:
+      - mailhog
 networks:
   naturesbounty.lib.unb.ca:
     name: naturesbounty.lib.unb.ca
