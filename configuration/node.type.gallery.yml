@@ -11,7 +11,7 @@ third_party_settings:
 name: Gallery
 type: gallery
 description: 'Content type to store image gallery.'
-help: ''
+help: null
 new_revision: false
 preview_mode: 0
 display_submitted: false

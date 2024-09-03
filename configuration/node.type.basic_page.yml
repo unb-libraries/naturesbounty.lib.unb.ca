@@ -11,7 +11,7 @@ third_party_settings:
 name: 'Basic Page'
 type: basic_page
 description: 'Basic page with title and body.'
-help: ''
+help: null
 new_revision: false
 preview_mode: 0
 display_submitted: false

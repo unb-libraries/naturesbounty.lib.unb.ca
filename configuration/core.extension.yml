@@ -25,6 +25,9 @@ module:
   help: 0
   history: 0
   image: 0
+  jquery_ui: 0
+  jquery_ui_draggable: 0
+  jquery_ui_resizable: 0
   link: 0
   menu_ui: 0
   mysql: 0
