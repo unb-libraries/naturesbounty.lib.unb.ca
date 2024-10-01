@@ -16,7 +16,8 @@
       "cweagans/composer-patches": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "drupal/core-composer-scaffold": true,
-      "phpstan/extension-installer": true
+      "phpstan/extension-installer": true,
+      "php-http/discovery": true
     },    
     "discard-changes": true,
     "preferred-install": {
@@ -104,7 +105,8 @@
     "drupal/jquery_ui": "^1",
     "drupal/jquery_ui_draggable": "^2",
     "drupal/jquery_ui_resizable": "^2",
-    "drupal/quickedit": "^1", 
+    "drupal/quickedit": "^1",
+    "drupal/rdf": "^2", 
     "drupal/redis": "^1",
     "drupal/simple_sitemap": "^4",
     "jackmoore/colorbox": "^1",
