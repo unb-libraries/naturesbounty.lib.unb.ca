@@ -54,6 +54,13 @@ h1.page-header {
   padding: 0;
 }
 
+/* PDF.js */
+.pdf-container {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 2px 2px 2px gray;
+}
+
 @media (max-width: 530px) {
 
   #banner {
