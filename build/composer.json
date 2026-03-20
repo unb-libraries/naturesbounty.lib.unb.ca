@@ -66,7 +66,14 @@
         "type:drupal-custom-theme"
       ]
     },
-    "patches": {}
+    "patches": {
+      "drupal/bootstrap": {
+        "3.x schema fixes": "https://www.drupal.org/files/issues/2023-04-27/bootsrtap-2883714-20.patch"
+      },
+      "drupal/simple_sitemap": {
+        "4.x type error fix": "https://www.drupal.org/files/issues/2024-03-07/3426232-2-typeError.patch"
+      }
+    }
   },
   "license": "MIT",
   "minimum-stability": "dev",
@@ -94,7 +101,7 @@
     }
   ],
   "require": {
-    "drupal/bootstrap": "^3",
+    "drupal/bootstrap": "^3.36",
     "drupal/color": "^2", 
     "drupal/colorbox": "^2",
     "drupal/core": "^11",
