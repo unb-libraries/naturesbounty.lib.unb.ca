@@ -1,0 +1,81 @@
+# Schema for the theme setting configuration file of the Bootstrap base theme.
+
+naturesbounty_lib_unb_ca.settings:
+  type: theme_settings
+  label: 'Bootstrap settings'
+  mapping:
+    schemas:
+      type: mapping
+      label: Schemas
+      mapping:
+        bootstrap:
+          type: integer
+          label: Bootstrap
+        naturesbounty_lib_unb_ca:
+          type: integer
+          label: naturesbounty_lib_unb_ca
+    cdn_theme:
+      type: string
+      label: CDN theme
+    cdn_cache_ttl_versions:
+      type: float
+      label: CND cache TTL version
+    cdn_cache_ttl_themes:
+      type: float
+      label: CND cache TTL themes
+    cdn_cache_ttl_assets:
+      type: float
+      label: CND cache TTL assets
+    cdn_cache_ttl_library:
+      type: float
+      label: CND cache TTL library
+    table_responsive:
+      type: integer
+      label: Table responsive
+    reset_http_request_cache:
+      type: ignore
+    apply:
+      type: string
+      label: Apply
+    table:
+      type: ignore
+    region_wells:
+      type: mapping
+      label: 'Region Wells'
+      mapping:
+        branding:
+          type: string
+          label: Branding
+        header:
+          type: string
+          label: Header
+        navigation:
+          type: string
+          label: Navigation
+        navigation_collapsible:
+          type: string
+          label: 'Navigation (Collapsible)'
+        highlighted:
+          type: string
+          label: 'Highlighted'
+        help:
+          type: string
+          label: 'Help'
+        content:
+          type: string
+          label: 'Content'
+        sidebar_first:
+          type: string
+          label: 'Primary'
+        sidebar_second:
+          type: string
+          label: 'Secondary'
+        footer:
+          type: string
+          label: 'Footer'
+        page_top:
+          type: string
+          label: 'Page top'
+        page_bottom:
+          type: string
+          label: 'Page bottom'
