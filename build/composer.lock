@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "58e3b88c99353bc0e6a7906ff8fd3806",
+    "content-hash": "6f212b0c4d11af427e30420e920a6c1b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2765,6 +2765,18 @@
                 }
             ],
             "time": "2026-03-10T09:55:26+00:00"
+        },
+        {
+            "name": "jackmoore/colorbox",
+            "version": "1.7.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/TurbojetTechnologies/colorbox/archive/refs/tags/1.7.0.zip"
+            },
+            "require": {
+                "composer/installers": "^2"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "laravel/prompts",
@@ -6893,18 +6905,6 @@
                 }
             ],
             "time": "2026-02-09T09:33:46+00:00"
-        },
-        {
-            "name": "turbojet/colorbox",
-            "version": "1.7.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/TurbojetTechnologies/colorbox/archive/refs/tags/1.7.0.zip"
-            },
-            "require": {
-                "composer/installers": "^2"
-            },
-            "type": "drupal-library"
         },
         {
             "name": "twig/twig",
