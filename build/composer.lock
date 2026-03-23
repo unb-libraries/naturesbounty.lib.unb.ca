@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4034f27943e8cd5488d4170057907b53",
+    "content-hash": "58e3b88c99353bc0e6a7906ff8fd3806",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2767,18 +2767,6 @@
             "time": "2026-03-10T09:55:26+00:00"
         },
         {
-            "name": "jackmoore/colorbox",
-            "version": "1.6.4",
-            "dist": {
-                "type": "file",
-                "url": "https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js"
-            },
-            "require": {
-                "composer/installers": "^2"
-            },
-            "type": "drupal-library"
-        },
-        {
             "name": "laravel/prompts",
             "version": "v0.3.15",
             "source": {
@@ -3866,16 +3854,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.21",
+            "version": "v0.12.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "4821fab5b7cd8c49a673a9fd5754dc9162bb9e97"
+                "reference": "3be75d5b9244936dd4ac62ade2bfb004d13acf0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4821fab5b7cd8c49a673a9fd5754dc9162bb9e97",
-                "reference": "4821fab5b7cd8c49a673a9fd5754dc9162bb9e97",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/3be75d5b9244936dd4ac62ade2bfb004d13acf0f",
+                "reference": "3be75d5b9244936dd4ac62ade2bfb004d13acf0f",
                 "shasum": ""
             },
             "require": {
@@ -3939,9 +3927,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.21"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.22"
             },
-            "time": "2026-03-06T21:21:28+00:00"
+            "time": "2026-03-22T23:03:24+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -6907,6 +6895,18 @@
             "time": "2026-02-09T09:33:46+00:00"
         },
         {
+            "name": "turbojet/colorbox",
+            "version": "1.7.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/TurbojetTechnologies/colorbox/archive/refs/tags/1.7.0.zip"
+            },
+            "require": {
+                "composer/installers": "^2"
+            },
+            "type": "drupal-library"
+        },
+        {
             "name": "twig/twig",
             "version": "v3.22.2",
             "source": {
@@ -7449,5 +7449,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

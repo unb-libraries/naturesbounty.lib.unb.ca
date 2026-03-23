@@ -87,15 +87,15 @@
     {
       "package": {
         "dist": {
-          "type": "file",
-          "url": "https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js"
+          "type": "zip",
+          "url": "https://github.com/TurbojetTechnologies/colorbox/archive/refs/tags/1.7.0.zip"
         },
-        "name": "jackmoore/colorbox",
+        "name": "turbojet/colorbox",
         "require": {
           "composer/installers": "^2"
         },
         "type": "drupal-library",
-        "version": "1.6.4"
+        "version": "1.7.0"
       },
       "type": "package"
     }
@@ -116,7 +116,7 @@
     "drupal/rdf": "^3", 
     "drupal/redis": "^1",
     "drupal/simple_sitemap": "^4",
-    "jackmoore/colorbox": "^1",
+    "turbojet/colorbox": "^1",
     "unb-libraries/composer-drupal-scaffold": "^11"
   },
   "require-dev": {
