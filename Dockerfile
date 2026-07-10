@@ -1,5 +1,4 @@
 FROM ghcr.io/unb-libraries/drupal:11.x-1.x-unblib
-MAINTAINER UNB Libraries <libsupport@unb.ca>
 
 # Install additional OS packages.
 ENV ADDITIONAL_OS_PACKAGES="postfix php${PHP_VERSION}-ldap php${PHP_VERSION}-xmlreader php${PHP_VERSION}-zip php${PHP_VERSION}-pecl-redis"
@@ -36,4 +35,5 @@ LABEL ca.unb.lib.generator="drupal11" \
   org.label-schema.vcs-url="https://github.com/unb-libraries/naturesbounty.lib.unb.ca" \
   org.label-schema.vendor="University of New Brunswick Libraries" \
   org.label-schema.version=$VERSION \
+  org.opencontainers.image.authors="UNB Libraries <libsupport@unb.ca>" \
   org.opencontainers.image.source="https://github.com/unb-libraries/naturesbounty.lib.unb.ca"
