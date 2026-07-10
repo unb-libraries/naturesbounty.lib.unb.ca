@@ -24,16 +24,12 @@ COPY ./custom/modules ${DRUPAL_ROOT}/modules/custom
 
 # Container metadata.
 LABEL ca.unb.lib.generator="drupal11" \
-  com.microscaling.docker.dockerfile="/Dockerfile" \
-  com.microscaling.license="MIT" \
-  org.label-schema.build-date=$BUILD_DATE \
-  org.label-schema.description="naturesbounty.lib.unb.ca outlines a study of plant exploration in New Brunswick from 1604 to 2000." \
-  org.label-schema.name="naturesbounty.lib.unb.ca" \
-  org.label-schema.schema-version="1.0" \
-  org.label-schema.url="https://naturesbounty.lib.unb.ca" \
-  org.label-schema.vcs-ref=$VCS_REF \
-  org.label-schema.vcs-url="https://github.com/unb-libraries/naturesbounty.lib.unb.ca" \
-  org.label-schema.vendor="University of New Brunswick Libraries" \
-  org.label-schema.version=$VERSION \
+  org.opencontainers.image.title="naturesbounty.lib.unb.ca" \
+  org.opencontainers.image.description="naturesbounty.lib.unb.ca outlines a study of plant exploration in New Brunswick from 1604 to 2000." \
+  org.opencontainers.image.vendor="University of New Brunswick Libraries" \
   org.opencontainers.image.authors="UNB Libraries <libsupport@unb.ca>" \
-  org.opencontainers.image.source="https://github.com/unb-libraries/naturesbounty.lib.unb.ca"
+  org.opencontainers.image.url="https://naturesbounty.lib.unb.ca" \
+  org.opencontainers.image.source="https://github.com/unb-libraries/naturesbounty.lib.unb.ca" \
+  org.opencontainers.image.version="$VERSION" \
+  org.opencontainers.image.revision="$VCS_REF" \
+  org.opencontainers.image.created="$BUILD_DATE"
