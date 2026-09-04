@@ -1,9 +1,20 @@
-.gitkeep
-vendor
-/composer.lock
-tests/behat/features/bootstrap
-scripts/local
-.idea
-configuration/.htaccess
-/build/vendor
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
 
+# Node dependencies
+.pnpm-store/
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea

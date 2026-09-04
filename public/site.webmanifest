@@ -1,0 +1,16 @@
+{
+  "name": "Nature's Bounty: Four Centuries of Plant Exploration in New Brunswick",
+  "short_name": "Nature's Bounty",
+  "description": "Nature's Bounty: Four Centuries of Plant Exploration in New Brunswick",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#caca9e",
+  "display": "standalone"
+}

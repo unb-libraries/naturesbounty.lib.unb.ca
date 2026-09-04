@@ -1,41 +1,128 @@
-![naturesbounty.lib.unb.ca screenshot](https://github.com/unb-libraries/naturesbounty.lib.unb.ca/raw/prod/.dockworker/screenshot.png "naturesbounty.lib.unb.ca screenshot")
-# [naturesbounty.lib.unb.ca](https://naturesbounty.lib.unb.ca/) : Lean Instance Repository
-[![Build Status](https://github.com/unb-libraries/naturesbounty.lib.unb.ca/actions/workflows/deployment-workflow.yaml/badge.svg?branch=prod)](https://github.com/unb-libraries/naturesbounty.lib.unb.ca/actions/workflows/deployment-workflow.yaml)
-[![GitHub license](https://img.shields.io/github/license/unb-libraries/naturesbounty.lib.unb.ca)](https://github.com/unb-libraries/naturesbounty.lib.unb.ca/blob/prod/LICENSE)
-![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/naturesbounty.lib.unb.ca?label=lean%20repo%20size)
+# naturesbounty.lib.unb.ca
 
-This repository contains the assets used to test, build, and deploy the [naturesbounty.lib.unb.ca](https://naturesbounty.lib.unb.ca) Drupal application. This repository extends the [unb-libraries/docker-drupal](https://github.com/unb-libraries/docker-drupal) base image, which deploys nginx and php-fpm in the service container.
+UNB Libraries' presentation of Dr. C. Mary Young's *Nature's Bounty: Four Centuries of
+Plant Exploration in New Brunswick* — a small, static Nuxt 4 site with no backend, API, or
+database.
 
-## Deploy this Application Yourself!
-Local deployment, development and testing of naturesbounty.lib.unb.ca is easy, as we leverage [dockworker](https://github.com/unb-libraries/dockworker), our unified framework of [Robo](https://robo.li/) commands that streamline local development of our application on Linux or OSX.
+## Getting started
 
-### Step 1: Install Dockworker's Dependencies
-In your local development environment, a minimal number of 'one time' dependencies are required to deploy applications with dockworker. Some or all of these may already be installed in your environment; see the list of dependencies and installation instructions [here](https://github.com/unb-libraries/dockworker/blob/4.x/docs/prerequisites.md).
+Copy `.env` values as needed first — `NUXT_PORT` and `NUXT_SITE_URI` drive the dev server's
+host/port, public URL, and Vite HMR websocket (defaults to `localhost:3000` if unset).
 
-### Step 2: Deploy
-With all dependencies installed, you are ready to deploy any of our applications locally and and begin development:
+### Run with Docker
 
-```
-composer install
-vendor/bin/dockworker deploy
+Requires only [Docker](https://www.docker.com) — the container brings its own Node and pnpm.
+
+```bash
+docker compose up
 ```
 
-And that's it! The application will build and deploy in your local environment.
+This bind-mounts `app/`, `public/`, `nuxt.config.ts`, `package.json`, and `pnpm-lock.yaml`
+into the container and runs `pnpm dev` inside it, exposing `NUXT_PORT` (3098 by default) and
+its HMR websocket on `NUXT_PORT * 10` (30980). Once you have pnpm on the host,
+`pnpm container:start` is the same command.
 
-If you work with unb-libraries applications often, you may also consider [installing a dockworker alias](https://gist.github.com/JacobSanford/1448fece856be371060d0f16ccb1b194), which avoids referencing vendor/bin for each dockworker command.
+### Run locally
 
-## Other useful commands
-Run ```vendor/bin/dockworker``` to list available dockworker commands for this application.
+Requires [Node.js](https://nodejs.org) `^20.19 || >=22.12` (Vite 7's floor — the Docker
+images use Node 26) and [pnpm](https://pnpm.io) 11.10.0.
 
-## Author / Contributors
-This application was created at [![UNB Libraries](https://github.com/unb-libraries/assets/raw/master/unblibbadge.png "UNB Libraries")](https://lib.unb.ca) by the following humans:
+```bash
+pnpm install
+pnpm dev
+```
 
-<a href="https://github.com/JacobSanford"><img src="https://avatars.githubusercontent.com/u/244894?v=3" title="Jacob Sanford" width="128" height="128"></a>
-<a href="https://github.com/camilocodes"><img src="https://avatars.githubusercontent.com/u/12695787?v=3" title="Camilo V." width="128" height="128"></a>
-<a href="https://github.com/bricas"><img src="https://avatars.githubusercontent.com/u/18400?v=3" title="Brian Cassidy" width="128" height="128"></a>
+pnpm is most easily installed through Corepack, which picks up the version pinned by
+`packageManager` in `package.json`:
 
-## License
-- As part of our 'open' ethos, UNB Libraries licenses its applications and workflows to be freely available to all whenever possible.
-- Consequently, the contents of this repository [unb-libraries/naturesbounty.lib.unb.ca] are licensed under the [MIT License](http://opensource.org/licenses/mit-license.html). This license explicitly excludes:
-   - Any website content, which remains the exclusive property of its author(s).
-   - The UNB logo and any of the associated suite of visual identity assets, which remains the exclusive property of the University of New Brunswick.
+```bash
+corepack enable pnpm
+```
+
+If the Node.js your system provides is older than the range above, install a current
+release with a version manager such as [fnm](https://github.com/Schniz/fnm),
+[nvm](https://github.com/nvm-sh/nvm), [Volta](https://volta.sh), or
+[mise](https://mise.jdx.dev) rather than replacing the system package.
+
+### Configuration
+
+Settings are defined in `nuxt.config.ts`. `NUXT_PORT` and `NUXT_SITE_URI` are read from
+`.env` for local development; in production they're set directly as container environment
+variables in the `Dockerfile`.
+
+## Development
+
+| Command | Description |
+| --- | --- |
+| `pnpm dev` | Start the dev server |
+| `pnpm build` | Production build (SSR output) |
+| `pnpm generate` | Static site generation — this is what the production Docker image uses |
+| `pnpm preview` | Preview a production build locally |
+| `pnpm lint` / `pnpm lint:fix` | ESLint (`@antfu/eslint-config`) over the whole repo |
+
+Husky git hooks enforce code quality on commit: `pre-commit` runs `lint-staged` (ESLint
+`--fix` on staged files), `commit-msg` runs `commitlint` against Conventional Commits,
+restricted to the types in `commitlint.config.ts` (`feat`, `fix`, `perf`, `refactor`,
+`test`, `ops`, `docs`).
+
+There is no test setup configured in this repo.
+
+### Structure
+
+- `app/pages/*.vue` — file-based routes: `index.vue`, `foreword.vue`, `gallery.vue`,
+  `biography.vue`, `credits.vue`. Each sets its own title via `useHead({ title: '...' })`;
+  the global title template is set in `nuxt.config.ts`.
+- `app/layouts/default.vue` — the single shell (banner/logo, nav, `<slot />`).
+- `app/assets/css/main.css` — Tailwind CSS v4 theme tokens (`@theme`) and global element
+  styling (headings, links, lists), consumed as utility classes (e.g. `bg-page`,
+  `text-link`, `font-heading`). No `tailwind.config.js` — v4 uses CSS-based config.
+- `app/pages/gallery.vue` — a plain array of `{ file, caption }` entries backing a grid of
+  thumbnails, each linking to its full-size image under `public/images/gallery/`.
+- `app/components/GalleryLightbox.vue` — replaces the production site's jQuery colorbox
+  with a native `<dialog>`, which supplies the modal overlay, `Esc` to close, focus
+  trapping and top-layer stacking without a dependency. Matches colorbox's behaviour:
+  one gallery group across all images, caption plus `{current} of {total}` counter,
+  prev/next (also bound to the arrow keys, with neighbours preloaded), and close on
+  overlay click. Displays the `display/` derivative and adds a "Download full size" link
+  to the original, renamed after the caption. The thumbnail anchors keep their
+  real `href`, so the grid still resolves to the full-size images without JavaScript.
+- `public/files/` — source documents (`natures-bounty.pdf`, `natures-bounty.epub`),
+  referenced by absolute path (e.g. `/files/natures-bounty.pdf`). Unlike
+  `educationhistory.lib.unb.ca`, there is no HTML edition of the book.
+- `public/images/gallery/` — full-size plant illustration scans (1800x2700, ~1MB each),
+  linked for download. Two committed derivative sets sit beside them, since the production
+  image is static nginx with no runtime image server: `thumbs/` for the grid, and
+  `display/` (1400px tall, ~150KB) for the lightbox. Regenerate `display/` after adding a
+  scan with:
+
+  ```bash
+  cd public/images/gallery
+  for f in *.jpg; do convert "$f" -resize x1400 -strip -interlace Plane -quality 85 "display/$f"; done
+  ```
+
+## Deployment
+
+`.github/workflows/deployment-workflow.yaml` calls the shared pipeline in
+[`unb-libraries/github-workflows`](https://github.com/unb-libraries/github-workflows): build
+the image, push it to GHCR, then `kubectl set image` on the Kubernetes deployment. A push to
+`dev` deploys to the `dev` namespace as `dev-naturesbounty.lib.unb.ca`; the `prod` branch
+still holds the Drupal build and deploys prod on its own workflow.
+
+The `Dockerfile` runs `pnpm generate` in a throw-away stage and serves the result from
+[`ghcr.io/unb-libraries/nuxt-ssg`](https://github.com/unb-libraries/docker-nuxt-ssg), which
+carries the nginx configuration for a generated Nuxt site. `scripts/verify-generate.mjs`
+fails the build if any route was not prerendered — this site has no content collection, so
+that script lists the routes directly and needs editing when a page is added.
+
+Because the site is generated statically, any change to pages or content requires a
+rebuild to take effect in production — there is no server-side rendering at runtime.
+
+## Entry points
+
+- `/` — home page: embedded PDF and download links.
+- `/foreword` — foreword by Dr. James Goltz.
+- `/gallery` — grid of plant illustration thumbnails; opens a `<dialog>` lightbox with
+  prev/next and a full-size download, and falls back to a direct image link without JS.
+- `/biography` — biography of C. Mary Young.
+- `/credits` — credits page.
+- `/files/natures-bounty.pdf`, `/files/natures-bounty.epub` — the book's source documents.

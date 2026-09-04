@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page: #caca9e;
+  --color-content: #ffffff;
+  --color-header: #e5e5ca;
+  --color-nav: #f8f8f8;
+  --color-nav-link: #666666;
+  --color-nav-link-active: #000000;
+  --color-link: #337ab7;
+  --color-link-hover: #000000;
+  --font-header: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-heading: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-body: Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+@layer base {
+  a {
+    @apply text-link;
+  }
+
+  a:hover {
+    @apply text-link-hover;
+  }
+
+  h1 {
+    @apply text-3xl font-bold font-heading mb-4;
+  }
+
+  embed {
+    @apply mb-4 shadow-md;
+  }
+
+  p {
+    @apply mb-4 text-justify;
+  }
+
+  ul {
+    @apply list-disc pl-8 mb-4;
+  }
+
+  body {
+    @apply bg-page font-body;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-[15px] text-[15px] text-nav-link border-b-2 border-transparent;
+  }
+
+  .nav-link:hover {
+    @apply text-nav-link-active;
+  }
+
+  .nav-link.router-link-exact-active {
+    @apply text-nav-link-active border-nav-link-active;
+  }
+
+  .book-title {
+    @apply font-heading font-bold italic text-2xl mb-6;
+  }
+
+  .book-title span {
+    @apply block not-italic font-normal text-xl mt-2;
+  }
+
+  .gallery-grid {
+    @apply flex flex-wrap gap-4 list-none pl-0 mb-4;
+  }
+
+  .gallery-grid img {
+    @apply w-[150px] h-auto shadow;
+  }
+}
