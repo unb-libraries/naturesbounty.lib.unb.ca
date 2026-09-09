@@ -28,7 +28,10 @@
   }
 
   embed {
-    @apply mb-4 shadow-md;
+    @apply my-8 shadow-md w-full;
+    /* ~15% taller than the original 600px viewer, capped so it never
+       overflows the viewport on short screens. */
+    height: min(690px, 85vh);
   }
 
   p {
