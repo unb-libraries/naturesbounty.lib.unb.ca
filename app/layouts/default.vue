@@ -1,11 +1,16 @@
 <template>
-  <div class="min-h-screen bg-page">
+  <div class="flex min-h-screen flex-col bg-page">
     <NuxtRouteAnnouncer />
     <!-- 1400px matches the production theme, which overrides Bootstrap's
          container to `width: 1400px` above that breakpoint (1175px above
-         1200px). The narrower `max-w-5xl` belongs to educationhistory, whose
-         book presentation wants a constrained reading measure. -->
-    <div class="mx-auto max-w-[1400px]">
+         1200px). educationhistory uses the same width.
+
+         The column is a flex child that grows to fill the viewport, and the
+         content area grows within it, so on a short page the white content
+         panel stretches down and the footer sits at the bottom of the window
+         rather than partway up it. `w-full` is needed because an auto-margined
+         flex item shrinks to its content instead of stretching. -->
+    <div class="mx-auto flex w-full max-w-[1400px] flex-1 flex-col">
       <div class="bg-header">
         <NuxtLink to="/" aria-label="Nature's Bounty home" class="block h-[158px] bg-[url('/images/logo.jpg')] bg-no-repeat bg-center" />
         <nav class="flex flex-wrap bg-nav px-4 font-body">
@@ -26,7 +31,7 @@
           </NuxtLink>
         </nav>
       </div>
-      <div class="bg-content p-6">
+      <div class="flex-1 bg-content p-6">
         <slot />
       </div>
       <footer class="flex flex-wrap items-center justify-between gap-4 px-6 pt-4 pb-6 font-header">
